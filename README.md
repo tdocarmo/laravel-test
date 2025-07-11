@@ -1,61 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Application de gestion de réservations immobilières
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Sommaire
 
-## About Laravel
+-   [Fonctionnalités](#fonctionnalités)
+-   [Installation](#installation)
+-   [Utilisation](#utilisation)
+-   [Stack technique](#stack-technique)
+-   [Captures d’écran](#captures-décran)
+-   [Auteur](#auteur)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fonctionnalités
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Création de compte, connexion et déconnexion ([Laravel Breeze](https://laravel.com/docs/12.x/starter-kits#laravel-breeze))
+-   Gestion des propriétés et réservations (CRUD)
+-   Interface utilisateur responsive (Blade + [TailwindCSS](https://tailwindcss.com/))
+-   Composant [Livewire](https://laravel-livewire.com/) pour la réservation de biens
+-   Panneau d’administration [Filament](https://filamentphp.com/) sécurisé (accès admin uniquement)
+-   Relations utilisateurs/propriétés/réservations gérées
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation
 
-## Learning Laravel
+1. **Cloner le repo** :
+    ```sh
+    git clone <url-du-repo>
+    cd laravel-test
+    ```
+2. **Installer les dépendances** :
+    ```sh
+    composer install
+    npm install && npm run build
+    ```
+3. **Configurer** le fichier `.env` et la base de données.
+4. **Lancer les migrations** :
+    ```sh
+    php artisan migrate
+    ```
+5. **Créer un utilisateur admin** :
+    ```sh
+    php artisan tinker
+    >>> \App\Models\User::create(['name'=>'admin','email'=>'admin@admin.com','password'=>bcrypt('testtest'),'is_admin'=>true]);
+    ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Utilisation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   Accès public : [`/`](http://localhost:8000/) (inscription, connexion, réservation)
+-   Accès admin : [`/admin`](http://localhost:8000/admin) (`admin@admin.com` / `testtest`)
+-   L’admin peut gérer toutes les propriétés et réservations via le dashboard Filament.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Stack technique
 
-## Laravel Sponsors
+-   [Laravel 12](https://laravel.com/)
+-   [Breeze](https://laravel.com/docs/12.x/starter-kits#laravel-breeze)
+-   [Livewire](https://laravel-livewire.com/)
+-   [Filament](https://filamentphp.com/)
+-   [TailwindCSS](https://tailwindcss.com/)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Captures d'écran
 
-### Premium Partners
+### Interface utilisateur
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**Page d'accueil admin**
+![Page d'accueil admin](docs/screenshots/home-admin.png)
 
-## Contributing
+**Inscription utilisateur**
+![Inscription utilisateur](docs/screenshots/user-register.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Connexion utilisateur**
+![Connexion utilisateur](docs/screenshots/login-user.png)
 
-## Code of Conduct
+**Connexion admin**
+![Connexion admin](docs/screenshots/login-admin.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Déconnexion**
+![Déconnexion](docs/screenshots/log-out.png)
 
-## Security Vulnerabilities
+**Réservation utilisateur**
+![Réservation utilisateur](docs/screenshots/user-reservation.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Accès bloqué pour non-admin**
+![Accès bloqué pour non-admin](docs/screenshots/non-admin-blocked.png)
 
-## License
+### Interface d'administration (Filament)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Gestion des propriétés**
+![Gestion des propriétés](docs/screenshots/properties-admin.png)
+
+**Création de propriété**
+![Création de propriété](docs/screenshots/creation-properties-admin.png)
+
+**Gestion des réservations**
+![Gestion des réservations](docs/screenshots/bookings-admin.png)
+
+**Création de réservation**
+![Création de réservation](docs/screenshots/creation-booking-admin.png)
+
+_Note : Les captures d'écran sont stockées dans le dossier `~/Images/Captures d'écran/`_
+
+## Auteur
+
+Toni Do Carmo
+11 juillet 2025
