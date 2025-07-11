@@ -1,0 +1,29 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#5291
+    [34mall[39m: [
+      [34;4mApp\Models\Property[39;24m {#5278
+        [34mid[39m: [35m1[39m,
+        [34mname[39m: "[32mAppartement cosy au centre-ville[39m",
+        [34mdescription[39m: "[32mUn appartement agréable proche de toutes commodités.[39m",
+        [34mprice_per_night[39m: "[32m75.00[39m",
+        [34mcreated_at[39m: "[32m2025-07-11 15:10:17[39m",
+        [34mupdated_at[39m: "[32m2025-07-11 15:10:17[39m",
+      },
+      [34;4mApp\Models\Property[39;24m {#5302
+        [34mid[39m: [35m2[39m,
+        [34mname[39m: "[32mVilla avec piscine[39m",
+        [34mdescription[39m: "[32mSpacieuse villa avec piscine et jardin privé.[39m",
+        [34mprice_per_night[39m: "[32m150.00[39m",
+        [34mcreated_at[39m: "[32m2025-07-11 15:12:23[39m",
+        [34mupdated_at[39m: "[32m2025-07-11 15:12:23[39m",
+      },
+      [34;4mApp\Models\Property[39;24m {#5269
+        [34mid[39m: [35m3[39m,
+        [34mname[39m: "[32mStudio moderne[39m",
+        [34mdescription[39m: "[32mStudio neuf avec toutes les installations modernes.[39m",
+        [34mprice_per_night[39m: "[32m60.00[39m",
+        [34mcreated_at[39m: "[32m2025-07-11 15:12:30[39m",
+        [34mupdated_at[39m: "[32m2025-07-11 15:12:30[39m",
+      },
+    ],
+  }
+
