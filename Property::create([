@@ -1,9 +1,0 @@
-[90m= [39m[34;4mApp\Models\Property[39;24m {#6267
-    [34mname[39m: "[32mAppartement cosy au centre-ville[39m",
-    [34mdescription[39m: "[32mUn appartement agréable proche de toutes commodités.[39m",
-    [34mprice_per_night[39m: [33m75.0[39m,
-    [34mupdated_at[39m: "[32m2025-07-11 15:10:17[39m",
-    [34mcreated_at[39m: "[32m2025-07-11 15:10:17[39m",
-    [34mid[39m: [35m1[39m,
-  }
-

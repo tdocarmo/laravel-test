@@ -94,7 +94,6 @@
 **Création de réservation**
 ![Création de réservation](docs/screenshots/creation-booking-admin.png)
 
-_Note : Les captures d'écran sont stockées dans le dossier `~/Images/Captures d'écran/`_
 
 ## Auteur
 
